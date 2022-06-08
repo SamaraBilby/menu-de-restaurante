@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&family=Pompiere&display=swap');
 
 * {
     margin: 0;
@@ -7,17 +7,15 @@
     list-style: none;
     text-decoration: none;
     font-size: 16px;
-    font-family: 'Margarine';
-    
-
+    font-family: 'Pompiere', cursive;
 }
+
+
 body {
    background-color: #FFE9B8;
    width: 100%;
    height: 100%;
-   margin: 2em;
-
-
+   margin: 2em auto;
 }
 
 .r-title h3{
@@ -25,24 +23,67 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-.r-traco {
+.r-line {
         display: flex;
         justify-content: space-between;
-        align-items: center;           
+        align-items: center;
+        position: relative;          
 }
-.r-traco .r-traco__left, .r-traco .r-traco__rigth {
-        width: 300px;
+.r-line .r-line__left, .r-line .r-line__rigth {
+        width: 48%;
         border: 5px solid #000;
-        outline: yellow;
 }
 
+div.r-line .r-line__left {
+margin-left: 0rem;
+}
 
-img.r-traco__img {
+img.r-line__img {
     width: 50px;
     height: 50px;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+   
+}
+
+.r-item {
+    position: relative;
+    display: flex;
+    
+    width: 30rem;
+    height: 30rem;
+    margin-left: 5rem;
+}
+.r-menu-item__info {
+    position: absolute;
+    left: 200px;
+    bottom: 360px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 0.5px;
+}
+header h4.price {
+    color: green;
+}
+.r-item img.photo{
+    width: 12rem;
+    right: 12rem;
+    border: 5px solid yellow;
+    border-radius: 10px;
+    
+}
+p.r-menu-item__text {
+    font-size: 18px;
+    text-align: justify;
+    align-items: center;
+    top: 3px;
+    padding: 0.3px;
 }
