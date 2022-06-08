@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Margarine';
+    
+
+}
+body {
+   background-color: #FFE9B8;
+   width: 100%;
+   height: 100%;
+   margin: 2em;
+
+
+}
+
+.r-title h3{
+    font-size: 6rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.r-traco {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;           
+}
+.r-traco .r-traco__left, .r-traco .r-traco__rigth {
+        width: 300px;
+        border: 5px solid #000;
+        outline: yellow;
+}
+
+
+img.r-traco__img {
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+    margin-right: 0;
+}
