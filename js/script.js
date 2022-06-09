@@ -24,11 +24,11 @@ const menu = [
     descricao: '2 hambúrguer Angus 100% carne, picles, alface-americana,2 fatias bacon, cebola picada, 2 fatias de muçarela, maionese e porção de batata-frita',
 },
 {
-    id: 4,
+    id: 4, 
     title: 'Sanduiche peito de frango',
     categoria: 'Sanduiche',
     preco: 11.23,
-    imagem: '../assets/image/sanduiche/ssanduiche-peito-frango.jpg',
+    imagem: '../assets/image/sanduiche/sanduiche-peito-frango.jpg',
     descricao: '50g de peito de frango, alface, tomate, cebola, 1 fatias de muçarela e maionese americana',
 },
 {
@@ -44,7 +44,7 @@ const menu = [
     title: 'Salmon grelhado',
     categoria: 'paixes',
     preco: 62.88,
-    imagem: '../assets/image/paixe/salmon-salada.jpg',
+    imagem: '../assets/image/peixe/salmon-salada.jpg',
     descricao: '100g de Salmon, molho de laranja, salada amarericana',
 },
 {
@@ -53,7 +53,7 @@ const menu = [
     categoria: 'suino',
     preco: 35.15,
     imagem: '../assets/image/suino/carne-costela-molho-madeira.jpg',
-    descricao: 'Costelas suínas assadas e molho madeira',
+    descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, sunt! Saepe dignissimos odio doloribus harum dolores eaque tempora dolorem! Nemo nam reiciendis cumque modi molestiae nisi corporis explicabo inventore assumenda.',
 },
 {
     id: 8,
@@ -268,7 +268,7 @@ const menu = [
     title: 'Bolo de gelado de frutas vermelhas',
     categoria: 'sobremesa',
     preco: 25.00,
-    imagem: '../assets/image/sobremesa/bolo-gelado-chocsolate-morango-frutas-vermelha.jpg',
+    imagem: '../assets/image/sobremesa/bolo-gelado.jpg',
     descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dignissimos aliquid labore quae consequuntur ratione praesentium ad porro, nam expedita',
 },
 {
@@ -316,7 +316,7 @@ const menu = [
     title: 'Refrigerante',
     categoria: 'bebida',
     preco: 25.00,
-    imagem: '../assets/image/sobremesa/bebida-refrigerante.jpg',
+    imagem: '../assets/image/bebida/bebida-refrigerante.jpg',
     descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dignissimos aliquid labore quae consequuntur ratione praesentium ad porro, nam expedita',
 },
 {
@@ -324,8 +324,29 @@ const menu = [
     title: 'Suco',
     categoria: 'bebida',
     preco: 25.00,
-    imagem: '../assets/image/sobremesa/bebida-suco-melancia.jpg',
+    imagem: '../assets/image/bebida/bebida-suco-melancia.jpg',
     descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dignissimos aliquid labore quae consequuntur ratione praesentium ad porro, nam expedita',
 },
 ]
-console.log(menu)
+
+    const itensMenu = document.querySelector('.r-item');
+
+    window.addEventListener('DOMContentLoaded', function(){
+        let displayMenu = menu.map(function(item){
+           // console.log(item)
+           return `<article class="r-menu-item">
+           <img src='${item.imagem}' class="r-photo" alt='${item.title}'>
+           <div class="r-menu-item__info">
+               <header>
+                   <h4>${item.title}</h4>
+                   <h4 class="price">${item.preco}</h4>
+               </header>
+               <p class="r-menu-item__text">${item.descricao}</p>
+           </div>
+           
+       </article>`
+        })
+        displayMenu = displayMenu.join("");
+    itensMenu.innerHTML = displayMenu;
+    })
+    
