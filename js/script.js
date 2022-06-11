@@ -218,7 +218,7 @@ const menu = [
   {
     id: 25,
     title: 'Peito de Frango com arroz e brocólis',
-    categoria: 'carne',
+    categoria: 'frango',
     preco: 25.0,
     imagem: '../assets/image/frango/frango-peito-arroz-brocolis.jpg',
     descricao:
@@ -227,7 +227,7 @@ const menu = [
   {
     id: 26,
     title: 'Peito de Frango com arroz e brocólis',
-    categoria: 'carne',
+    categoria: 'frango',
     preco: 25.0,
     imagem: '../assets/image/carne/carne-arroz-salada-batata.jpg',
     descricao:
@@ -407,7 +407,7 @@ function displayMenuButtons() {
     ['todos']
   )
 
-  console.log('ALL CATEOGIRES', categories)
+  //console.log('ALL CATEOGIRES', categories)
 
   const categoryBtns = categories
     .map(function (categoria) {
@@ -419,11 +419,11 @@ function displayMenuButtons() {
 
   btnContainer.innerHTML = categoryBtns
   const filterBtns = btnContainer.querySelectorAll('.r-button-filter')
-  console.log('FILTER', filterBtns)
+  //console.log('FILTER', filterBtns)
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
-      console.log(e.currentTarget.dataset)
+      //console.log(e.currentTarget.dataset)
 
       const categoria = e.currentTarget.dataset.id
       console.log('categoria selecionada: ', categoria)
@@ -434,7 +434,7 @@ function displayMenuButtons() {
         return menuItem
       })
 
-      console.log('aqui', newCategory)
+      //console.log('aqui', newCategory)
       return displayMenuItens(newCategory)
     })
   })
