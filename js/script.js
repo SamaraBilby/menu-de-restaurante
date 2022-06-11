@@ -330,23 +330,82 @@ const menu = [
 ]
 
     const itensMenu = document.querySelector('.r-item');
+    const btnContainer = document.querySelector('.r-button');
+    
+    
+    
 
     window.addEventListener('DOMContentLoaded', function(){
+        displayMenuItens(menu);
+        displayMenuButtons();
+    
+    });
+    
+    function displayMenuItens(menuItens){
         let displayMenu = menu.map(function(item){
-           // console.log(item)
-           return `<article class="r-menu-item">
-           <img src='${item.imagem}' class="r-photo" alt='${item.title}'>
-           <div class="r-menu-item__info">
-               <header>
-                   <h4>${item.title}</h4>
-                   <h4 class="price">${item.preco}</h4>
-               </header>
-               <p class="r-menu-item__text">${item.descricao}</p>
-           </div>
+            return `<article class="r-menu-item">
+                        <img src='${item.imagem}' class="r-photo" alt='${item.title}'>
+                        <div class="r-menu-item__info">
+                            <header>
+                                <h4>${item.title}</h4>
+                                <h4 class="price">${item.preco}</h4>
+                            </header>
+                            <p class="r-menu-item__text">${item.descricao}</p>
+                        </div>
            
-       </article>`
+                    </article>`
         })
         displayMenu = displayMenu.join("");
-    itensMenu.innerHTML = displayMenu;
-    })
+        itensMenu.innerHTML = displayMenu;
+    };
+
+
+
+    function displayMenuButtons() {
+        const categories = menu.reduce(
+          function (values, item) {
+            if (!values.includes(item.categoria)) {
+              values.push(item.categoria);
+            }
+            return values;
+          },
+          ["todos"]
+        );
+        const categoryBtns = categories.map(function (categoria) {
+            return `<button type="button" class="r-button-filter" data-id=${categoria}>
+                ${categoria}
+              </button>`;
+          }).join("");
+      
+        btnContainer.innerHTML = categoryBtns;
+        const filterBtns = btnContainer.querySelectorAll(".r-button-filter");
+        console.log(filterBtns);
+      
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener("click", function (e) {
+             console.log(e.currentTarget.dataset);
+            const categoria = e.currentTarget.dataset.id;
+            const menuCategory = menu.filter(function (menuItem) {
+             console.log(menuItem.categoria);
+              if (menuItem.categoria === categoria) {
+                return menuItem;
+                }
+            });
+            if (categoria === "todos") {
+              return displayMenuItens(menu);
+            } else {
+              return displayMenuItens(menuCategory);
+            }
+          });
+        });
+      }
+    
+    
+
+    
+    
+    
+
+   
+    
     
